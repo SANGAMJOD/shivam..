@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Interactive Page</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: pink;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .Main {
+      padding-top: 20%;
+    }
+
+    input {
+      font-size: 30px;
+      width: 200px;
+      border: 2px solid red;
+      border-radius: 20px;
+      background: transparent;
+      padding-left: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 30px;
+      font-family: 'Pacifico', cursive;
+      color: red;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-shadow: 0 0 9px blue, 0 0 7px #fff, 0 0 10px #fff;
+    }
+
+    .content {
+      display: none;
+    }
+
+    @keyframes zoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .heart {
+      animation: zoom 0.2s linear infinite;
+    }
+  </style>
+
+  <script>
+    function Show() {
+      var name = document.getElementById('name').value;
+
+      if (name === "") {
+        alert('Please type your name');
+      } else {
+        document.getElementById('addname').innerHTML = name;
+        document.getElementById('m1').style.display = "none";
+        document.getElementById('c1').style.display = "block";
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="Main" id="m1">
+    <h1>ENTER YOUR NAME</h1>
+    <br><br>
+    <input type="text" id="name" placeholder="Your Name">
+    <br><br>
+    <button onclick="Show()">Submit</button>
+  </div>
+
+  <div class="content" id="c1">
+    <h1>HELLO <span id="addname"></span></h1>
+    <h1>How are you?</h1>
+  </div>
+</body>
+</html>
